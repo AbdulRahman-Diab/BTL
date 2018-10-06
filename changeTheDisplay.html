@@ -77,7 +77,7 @@
         function RightCountup() {
             RIndex++;
             $("#rNumLap").val(RIndex);
-            db.child('Counters/').update({ LIndex, RIndex });
+            db.ref('Counters/').set({ LIndex, RIndex });
         }
         function RightCountdown() {
             RIndex--;
