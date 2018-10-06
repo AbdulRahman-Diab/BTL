@@ -24,35 +24,71 @@
                 <th id="Right">
                     <p> First Disk </p>
                     <button class="btn" type="button" onClick="RightCountdown()">Click me</button>
-                    <input class="lap" id="rNumLap" type="text" name="" id="">
+                    <input class="lap" id="rNumLap" type="text" value="0" name="" id="">
                     <button class="btn" type="button" onClick="RightCountup()">Click me</button>
                 </th>
                 <th id="Left">
                     <p> Scound Disk </p>
                     <button class="btn" type="button" onClick="LeftCountdown()">Click me</button>
-                    <input class="lap" id="lNumLap" type="text" name="" id="">
+                    <input class="lap" id="lNumLap" type="text" value="0" name="" id="">
                     <button class="btn" type="button" onClick="LeftCountup()">Click me</button>
                 </th>
             </tr>
         </tbody>
     </table>
 
-    
+
+
     <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
     <script>
         // Initialize Firebase
         var config = {
-            apiKey: "AIzaSyBOC6xtCgXotxQyaL8kqatowaJHJji7dCc",
-            authDomain: "counter-9c6f1.firebaseapp.com",
-            databaseURL: "https://counter-9c6f1.firebaseio.com",
-            projectId: "counter-9c6f1",
-            storageBucket: "counter-9c6f1.appspot.com",
-            messagingSenderId: "7452490317"
+            apiKey: "AIzaSyDcuo6jFChUVFBEI8nkiM-mIqwICevbfkY",
+            authDomain: "counter-1b657.firebaseapp.com",
+            databaseURL: "https://counter-1b657.firebaseio.com",
+            projectId: "counter-1b657",
+            storageBucket: "counter-1b657.appspot.com",
+            messagingSenderId: "333307414489"
         };
         firebase.initializeApp(config);
+    </script>
+
+    <script>
+        var LIndex = 0, RIndex = 0;
+
+        // Get a reference to the database service
+        var db = firebase.database();
+        /*
+                db.ref(Counter).set({ Lift: LIndex, Right: RIndex });
+                var data = Counter.docs[0].data().text;
+                chats.docs[indexOfMessage].data();
+        */
+
+        function LeftCountup() {
+            LIndex++;
+            $("#lNumLap").val(LIndex);
+        }
+        function LeftCountdown() {
+            LIndex--;
+            $("#lNumLap").val(LIndex);
+        }
+        function RightCountup() {
+            RIndex++;
+            $("#rNumLap").val(RIndex);
+        }
+        function RightCountdown() {
+            RIndex--;
+            $("#rNumLap").val(RIndex);
+        }
+
+        db.child('Counter/').update({ LIndex, RIndex });
+
+        db.collection("Counter").orderBy("time").onSnapshot(handleDataRead);
+        $("#add").click(addMessage);
 
     </script>
-    <script src="js/Code.js" type="text/javascript"></script>
+
+   <!-- <script src="js/Code.js" type="text/javascript"></script> -->
 
 </body>
 
