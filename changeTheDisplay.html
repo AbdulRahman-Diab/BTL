@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+    <script src="js/jquery-3.3.1.js" type="text/javascript">
+    </script>
+
+    <link rel="stylesheet" href="Css/Style.css">
+
+    <title> BTL </title>
+</head>
+
+<body>
+
+    <table>
+        <tbody>
+            <tr>
+                <th id="Right">
+                    <p> First Disk </p>
+                    <button class="btn" type="button" onClick="RightCountdown()">Click me</button>
+                    <input class="lap" id="rNumLap" type="text" name="" id="">
+                    <button class="btn" type="button" onClick="RightCountup()">Click me</button>
+                </th>
+                <th id="Left">
+                    <p> Scound Disk </p>
+                    <button class="btn" type="button" onClick="LeftCountdown()">Click me</button>
+                    <input class="lap" id="lNumLap" type="text" name="" id="">
+                    <button class="btn" type="button" onClick="LeftCountup()">Click me</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBOC6xtCgXotxQyaL8kqatowaJHJji7dCc",
+            authDomain: "counter-9c6f1.firebaseapp.com",
+            databaseURL: "https://counter-9c6f1.firebaseio.com",
+            projectId: "counter-9c6f1",
+            storageBucket: "counter-9c6f1.appspot.com",
+            messagingSenderId: "7452490317"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+    <script src="js/Code.js" type="text/javascript"></script>
+
+</body>
+
+</html>
