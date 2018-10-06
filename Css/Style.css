@@ -44,10 +44,11 @@ table > tbody > tr > th {
 .lap {
     border: 2px solid rgba(0, 0, 0, 0.65);
     width: 50%;
+    text-align: center;
     vertical-align: middle;
     background-color: rgba(61, 61, 61, 0.8);
     color: rgba(200, 0, 0, 0.7);
-    font-size: 200px;
+    font-size: 180px;
 }
 
 .btn {
