@@ -67,25 +67,25 @@
         function LeftCountup() {
             LIndex++;
             $("#lNumLap").val(LIndex);
-            db.ref('Counters/').update({ Lift: LIndex, Right: RIndex });
+            db.ref('Counter').update({ Lift: LIndex, Right: RIndex });
         }
         function LeftCountdown() {
             LIndex--;
             $("#lNumLap").val(LIndex);
-            db.ref('Counters/').update({ LIndex, RIndex });
+            db.ref('Counter').update({ LIndex, RIndex });
             
         }
         function RightCountup() {
             RIndex++;
             $("#rNumLap").val(RIndex);
-            db.ref('Counters/').set({ LIndex, RIndex });
+            db.ref('Counter').set({ LIndex, RIndex });
         }
         function RightCountdown() {
             RIndex--;
             $("#rNumLap").val(RIndex);
-            db.child('Counters/').update({ Lift: LIndex, Right: RIndex });
+            db.child('Counters').update({ Lift: LIndex, Right: RIndex });
         }
-        db.collection("Counters").orderBy("time").onSnapshot(handleDataRead);
+       // db.collection("Counter").orderBy("time").onSnapshot(handleDataRead);
     </script>
 
    <!-- <script src="js/Code.js" type="text/javascript"></script> -->
