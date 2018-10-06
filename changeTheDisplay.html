@@ -67,12 +67,13 @@
         function LeftCountup() {
             LIndex++;
             $("#lNumLap").val(LIndex);
-            db.child('Counters/').update({ LIndex, RIndex });
+            db.ref('Counters/').update({ Lift: LIndex, Right: RIndex });
         }
         function LeftCountdown() {
             LIndex--;
             $("#lNumLap").val(LIndex);
-            db.child('Counters/').update({ LIndex, RIndex });
+            db.ref('Counters/').update({ LIndex, RIndex });
+            
         }
         function RightCountup() {
             RIndex++;
@@ -82,7 +83,7 @@
         function RightCountdown() {
             RIndex--;
             $("#rNumLap").val(RIndex);
-            db.child('Counters/').update({ LIndex, RIndex });
+            db.child('Counters/').update({ Lift: LIndex, Right: RIndex });
         }
         db.collection("Counters").orderBy("time").onSnapshot(handleDataRead);
     </script>
