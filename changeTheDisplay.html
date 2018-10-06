@@ -67,27 +67,24 @@
         function LeftCountup() {
             LIndex++;
             $("#lNumLap").val(LIndex);
-            db.child('Counter/').update({ LIndex, RIndex });
+            db.child('Counters/').update({ LIndex, RIndex });
         }
         function LeftCountdown() {
             LIndex--;
             $("#lNumLap").val(LIndex);
-            db.child('Counter/').update({ LIndex, RIndex });
+            db.child('Counters/').update({ LIndex, RIndex });
         }
         function RightCountup() {
             RIndex++;
             $("#rNumLap").val(RIndex);
-            db.child('Counter/').update({ LIndex, RIndex });
+            db.child('Counters/').update({ LIndex, RIndex });
         }
         function RightCountdown() {
             RIndex--;
             $("#rNumLap").val(RIndex);
-            db.child('Counter/').update({ LIndex, RIndex });
+            db.child('Counters/').update({ LIndex, RIndex });
         }
-
-        db.collection("Counter").orderBy("time").onSnapshot(handleDataRead);
-        $("#add").click(addMessage);
-
+        db.collection("Counters").orderBy("time").onSnapshot(handleDataRead);
     </script>
 
    <!-- <script src="js/Code.js" type="text/javascript"></script> -->
